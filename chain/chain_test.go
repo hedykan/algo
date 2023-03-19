@@ -88,3 +88,17 @@ func Test160(t *testing.T) {
 	PrintChain(common)
 	PrintChain(headCommon)
 }
+
+func Test206(t *testing.T) {
+	chain := CreateChain(1, 2, 3, 4, 5)
+	PrintChain(chain)
+	res := reverseList(chain)
+	PrintChain(res)
+}
+
+func Test92(t *testing.T) {
+	chain := CreateChain(1, 2, 3, 4, 5)
+	PrintChain(chain)
+	res := reverseBetween(chain, 2, 4)
+	PrintChain(res)
+}

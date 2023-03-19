@@ -1,18 +1,26 @@
 package chain
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
 // 通过数组的形式打印链表
-func PrintChain(head *ListNode) {
+func PrintChain(head *ListNode) error {
 	var res []int
-	for i := 0; i < 256; i++ {
+	var i = 0
+	for i = 0; i < 256; i++ {
 		if head == nil {
 			break
 		}
 		res = append(res, head.Val)
 		head = head.Next
 	}
+	if i == 256 {
+		return errors.New("too long")
+	}
 	fmt.Println(res)
+	return nil
 }
 
 // 创建链表
